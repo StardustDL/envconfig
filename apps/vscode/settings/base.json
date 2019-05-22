@@ -1,0 +1,7 @@
+{
+    "workbench.colorTheme": "Quiet Light",
+    "editor.suggestSelection": "first",
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "workbench.sideBar.location": "right"
+}
