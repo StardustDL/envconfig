@@ -1,0 +1,29 @@
+name: CI
+
+on: [push, pull_request]
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  boot-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Boot
+      run: |
+        chmod +x ./boot/boot.sh
+        ./boot/boot.sh
+      shell: bash
+  boot-windows:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Boot
+      run: |
+        Set-ExecutionPolicy Bypass -Scope Process -Force
+        ./boot/boot.ps1
+      shell: powershell
